@@ -1,0 +1,194 @@
+# Due to firewall restrictions, I have to use a CimSession that uses 
+# DCOM protocol to connect to my primary SCCM server when using the
+# Get-CimInstance
+$cimapp = Get-CimInstance -ClassName sms_applicationlatest -Namespace root/sms/site_$($cmsitecode) -CimSession (Get-CimSession -Name SCCM) -Filter "localizeddisplayname = 'Office 2016 R2D3 B'"
+$cimapp | Get-Member 
+
+   TypeName: Microsoft.Management.Infrastructure.CimInstance#root/sms/site_cm1/SMS_ApplicationLatest
+
+Name                               MemberType   Definition                                                                                                               
+----                               ----------   ----------                                                                                                               
+Clone                              Method       System.Object ICloneable.Clone()                                                                                         
+Dispose                            Method       void Dispose(), void IDisposable.Dispose()                                                                               
+Equals                             Method       bool Equals(System.Object obj)                                                                                           
+GetCimSessionComputerName          Method       string GetCimSessionComputerName()                                                                                       
+GetCimSessionInstanceId            Method       guid GetCimSessionInstanceId()                                                                                           
+GetHashCode                        Method       int GetHashCode()                                                                                                        
+GetObjectData                      Method       void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext ...
+GetType                            Method       type GetType()                                                                                                           
+ToString                           Method       string ToString()                                                                                                        
+PSShowComputerName                 NoteProperty bool PSShowComputerName=True                                                                                             
+ApplicabilityCondition             Property     string ApplicabilityCondition {get;set;}                                                                                 
+CategoryInstance_UniqueIDs         Property     string[] CategoryInstance_UniqueIDs {get;set;}                                                                           
+CIType_ID                          Property     uint32 CIType_ID {get;}                                                                                                  
+CIVersion                          Property     uint32 CIVersion {get;}                                                                                                  
+CI_ID                              Property     uint32 CI_ID {get;}                                                                                                      
+CI_UniqueID                        Property     string CI_UniqueID {get;set;}                                                                                            
+ConfigurationFlags                 Property     uint64 ConfigurationFlags {get;}                                                                                         
+CreatedBy                          Property     string CreatedBy {get;}                                                                                                  
+DateCreated                        Property     CimInstance#DateTime DateCreated {get;}                                                                                  
+DateLastModified                   Property     CimInstance#DateTime DateLastModified {get;}                                                                             
+EffectiveDate                      Property     CimInstance#DateTime EffectiveDate {get;}                                                                                
+EULAAccepted                       Property     uint32 EULAAccepted {get;}                                                                                               
+EULAExists                         Property     bool EULAExists {get;}                                                                                                   
+EULASignoffDate                    Property     CimInstance#DateTime EULASignoffDate {get;}                                                                              
+EULASignoffUser                    Property     string EULASignoffUser {get;}                                                                                            
+ExecutionContext                   Property     uint32 ExecutionContext {get;}                                                                                           
+Featured                           Property     uint32 Featured {get;set;}                                                                                               
+HasContent                         Property     bool HasContent {get;}                                                                                                   
+IsBundle                           Property     bool IsBundle {get;set;}                                                                                                 
+IsDeployable                       Property     bool IsDeployable {get;}                                                                                                 
+IsDeployed                         Property     bool IsDeployed {get;}                                                                                                   
+IsDigest                           Property     bool IsDigest {get;set;}                                                                                                 
+IsEnabled                          Property     bool IsEnabled {get;set;}                                                                                                
+IsExpired                          Property     bool IsExpired {get;set;}                                                                                                
+IsHidden                           Property     bool IsHidden {get;set;}                                                                                                 
+IsLatest                           Property     bool IsLatest {get;}                                                                                                     
+IsQuarantined                      Property     bool IsQuarantined {get;}                                                                                                
+IsSuperseded                       Property     bool IsSuperseded {get;}                                                                                                 
+IsSuperseding                      Property     bool IsSuperseding {get;}                                                                                                
+IsUserDefined                      Property     bool IsUserDefined {get;set;}                                                                                            
+IsVersionCompatible                Property     bool IsVersionCompatible {get;}                                                                                          
+LastModifiedBy                     Property     string LastModifiedBy {get;}                                                                                             
+LocalizedCategoryInstanceNames     Property     string[] LocalizedCategoryInstanceNames {get;}                                                                           
+LocalizedDescription               Property     string LocalizedDescription {get;}                                                                                       
+LocalizedDisplayName               Property     string LocalizedDisplayName {get;}                                                                                       
+LocalizedInformativeURL            Property     string LocalizedInformativeURL {get;}                                                                                    
+LocalizedPropertyLocaleID          Property     uint32 LocalizedPropertyLocaleID {get;}                                                                                  
+LogonRequirement                   Property     uint32 LogonRequirement {get;}                                                                                           
+Manufacturer                       Property     string Manufacturer {get;}                                                                                               
+ModelID                            Property     uint32 ModelID {get;set;}                                                                                                
+ModelName                          Property     string ModelName {get;set;}                                                                                              
+NumberOfDependentDTs               Property     uint32 NumberOfDependentDTs {get;}                                                                                       
+NumberOfDependentTS                Property     uint32 NumberOfDependentTS {get;}                                                                                        
+NumberOfDeployments                Property     uint32 NumberOfDeployments {get;}                                                                                        
+NumberOfDeploymentTypes            Property     uint32 NumberOfDeploymentTypes {get;}                                                                                    
+NumberOfDevicesWithApp             Property     uint32 NumberOfDevicesWithApp {get;}                                                                                     
+NumberOfDevicesWithFailure         Property     uint32 NumberOfDevicesWithFailure {get;}                                                                                 
+NumberOfSettings                   Property     uint32 NumberOfSettings {get;}                                                                                           
+NumberOfUsersWithApp               Property     uint32 NumberOfUsersWithApp {get;}                                                                                       
+NumberOfUsersWithFailure           Property     uint32 NumberOfUsersWithFailure {get;}                                                                                   
+NumberOfUsersWithRequest           Property     uint32 NumberOfUsersWithRequest {get;}                                                                                   
+NumberOfVirtualEnvironments        Property     uint32 NumberOfVirtualEnvironments {get;}                                                                                
+ObjectPath                         Property     string ObjectPath {get;set;}                                                                                             
+PackageID                          Property     string PackageID {get;set;}                                                                                              
+PermittedUses                      Property     uint32 PermittedUses {get;set;}                                                                                          
+PlatformCategoryInstance_UniqueIDs Property     string[] PlatformCategoryInstance_UniqueIDs {get;set;}                                                                   
+PlatformType                       Property     uint32 PlatformType {get;}                                                                                               
+PSComputerName                     Property     string PSComputerName {get;}                                                                                             
+SDMPackageLocalizedData            Property     CimInstance#InstanceArray SDMPackageLocalizedData {get;set;}                                                             
+SDMPackageVersion                  Property     uint32 SDMPackageVersion {get;set;}                                                                                      
+SDMPackageXML                      Property     string SDMPackageXML {get;set;}                                                                                          
+SecuredScopeNames                  Property     string[] SecuredScopeNames {get;}                                                                                        
+SedoObjectVersion                  Property     string SedoObjectVersion {get;}                                                                                          
+SoftwareVersion                    Property     string SoftwareVersion {get;}                                                                                            
+SourceCIVersion                    Property     uint32 SourceCIVersion {get;}                                                                                            
+SourceModelName                    Property     string SourceModelName {get;}                                                                                            
+SourceSite                         Property     string SourceSite {get;set;}                                                                                             
+SummarizationTime                  Property     CimInstance#DateTime SummarizationTime {get;}
+
+# WMI version
+$wmiapp = Get-WmiObject -ComputerName mysccmprimary -Namespace root\sms\site_cm1 -Class sms_applicationlatest -filter = 'Office 2016 R2D3 B'"
+$wmiapp | Get-Member
+
+   TypeName: System.Management.ManagementObject#root\sms\site_cm1\SMS_ApplicationLatest
+
+Name                               MemberType    Definition                                                                                         
+----                               ----------    ----------                                                                                         
+PSComputerName                     AliasProperty PSComputerName = __SERVER                                                                          
+SetIsExpired                       Method        System.Management.ManagementBaseObject SetIsExpired(System.Boolean Expired)                        
+UpdateStats                        Method        System.Management.ManagementBaseObject UpdateStats()                                               
+ApplicabilityCondition             Property      string ApplicabilityCondition {get;set;}                                                           
+CategoryInstance_UniqueIDs         Property      string[] CategoryInstance_UniqueIDs {get;set;}                                                     
+CIType_ID                          Property      uint32 CIType_ID {get;set;}                                                                        
+CIVersion                          Property      uint32 CIVersion {get;set;}                                                                        
+CI_ID                              Property      uint32 CI_ID {get;set;}                                                                            
+CI_UniqueID                        Property      string CI_UniqueID {get;set;}                                                                      
+ConfigurationFlags                 Property      uint64 ConfigurationFlags {get;set;}                                                               
+CreatedBy                          Property      string CreatedBy {get;set;}                                                                        
+DateCreated                        Property      string DateCreated {get;set;}                                                                      
+DateLastModified                   Property      string DateLastModified {get;set;}                                                                 
+EffectiveDate                      Property      string EffectiveDate {get;set;}                                                                    
+EULAAccepted                       Property      uint32 EULAAccepted {get;set;}                                                                     
+EULAExists                         Property      bool EULAExists {get;set;}                                                                         
+EULASignoffDate                    Property      string EULASignoffDate {get;set;}                                                                  
+EULASignoffUser                    Property      string EULASignoffUser {get;set;}                                                                  
+ExecutionContext                   Property      uint32 ExecutionContext {get;set;}                                                                 
+Featured                           Property      uint32 Featured {get;set;}                                                                         
+HasContent                         Property      bool HasContent {get;set;}                                                                         
+IsBundle                           Property      bool IsBundle {get;set;}                                                                           
+IsDeployable                       Property      bool IsDeployable {get;set;}                                                                       
+IsDeployed                         Property      bool IsDeployed {get;set;}                                                                         
+IsDigest                           Property      bool IsDigest {get;set;}                                                                           
+IsEnabled                          Property      bool IsEnabled {get;set;}                                                                          
+IsExpired                          Property      bool IsExpired {get;set;}                                                                          
+IsHidden                           Property      bool IsHidden {get;set;}                                                                           
+IsLatest                           Property      bool IsLatest {get;set;}                                                                           
+IsQuarantined                      Property      bool IsQuarantined {get;set;}                                                                      
+IsSuperseded                       Property      bool IsSuperseded {get;set;}                                                                       
+IsSuperseding                      Property      bool IsSuperseding {get;set;}                                                                      
+IsUserDefined                      Property      bool IsUserDefined {get;set;}                                                                      
+IsVersionCompatible                Property      bool IsVersionCompatible {get;set;}                                                                
+LastModifiedBy                     Property      string LastModifiedBy {get;set;}                                                                   
+LocalizedCategoryInstanceNames     Property      string[] LocalizedCategoryInstanceNames {get;set;}                                                 
+LocalizedDescription               Property      string LocalizedDescription {get;set;}                                                             
+LocalizedDisplayName               Property      string LocalizedDisplayName {get;set;}                                                             
+LocalizedInformativeURL            Property      string LocalizedInformativeURL {get;set;}                                                          
+LocalizedPropertyLocaleID          Property      uint32 LocalizedPropertyLocaleID {get;set;}                                                        
+LogonRequirement                   Property      uint32 LogonRequirement {get;set;}                                                                 
+Manufacturer                       Property      string Manufacturer {get;set;}                                                                     
+ModelID                            Property      uint32 ModelID {get;set;}                                                                          
+ModelName                          Property      string ModelName {get;set;}                                                                        
+NumberOfDependentDTs               Property      uint32 NumberOfDependentDTs {get;set;}                                                             
+NumberOfDependentTS                Property      uint32 NumberOfDependentTS {get;set;}                                                              
+NumberOfDeployments                Property      uint32 NumberOfDeployments {get;set;}                                                              
+NumberOfDeploymentTypes            Property      uint32 NumberOfDeploymentTypes {get;set;}                                                          
+NumberOfDevicesWithApp             Property      uint32 NumberOfDevicesWithApp {get;set;}                                                           
+NumberOfDevicesWithFailure         Property      uint32 NumberOfDevicesWithFailure {get;set;}                                                       
+NumberOfSettings                   Property      uint32 NumberOfSettings {get;set;}                                                                 
+NumberOfUsersWithApp               Property      uint32 NumberOfUsersWithApp {get;set;}                                                             
+NumberOfUsersWithFailure           Property      uint32 NumberOfUsersWithFailure {get;set;}                                                         
+NumberOfUsersWithRequest           Property      uint32 NumberOfUsersWithRequest {get;set;}                                                         
+NumberOfVirtualEnvironments        Property      uint32 NumberOfVirtualEnvironments {get;set;}                                                      
+ObjectPath                         Property      string ObjectPath {get;set;}                                                                       
+PackageID                          Property      string PackageID {get;set;}                                                                        
+PermittedUses                      Property      uint32 PermittedUses {get;set;}                                                                    
+PlatformCategoryInstance_UniqueIDs Property      string[] PlatformCategoryInstance_UniqueIDs {get;set;}                                             
+PlatformType                       Property      uint32 PlatformType {get;set;}                                                                     
+SDMPackageLocalizedData            Property      System.Management.ManagementObject#SMS_SDMPackageLocalizedData[] SDMPackageLocalizedData {get;set;}
+SDMPackageVersion                  Property      uint32 SDMPackageVersion {get;set;}                                                                
+SDMPackageXML                      Property      string SDMPackageXML {get;set;}                                                                    
+SecuredScopeNames                  Property      string[] SecuredScopeNames {get;set;}                                                              
+SedoObjectVersion                  Property      string SedoObjectVersion {get;set;}                                                                
+SoftwareVersion                    Property      string SoftwareVersion {get;set;}                                                                  
+SourceCIVersion                    Property      uint32 SourceCIVersion {get;set;}                                                                  
+SourceModelName                    Property      string SourceModelName {get;set;}                                                                  
+SourceSite                         Property      string SourceSite {get;set;}                                                                       
+SummarizationTime                  Property      string SummarizationTime {get;set;}                                                                
+__CLASS                            Property      string __CLASS {get;set;}                                                                          
+__DERIVATION                       Property      string[] __DERIVATION {get;set;}                                                                   
+__DYNASTY                          Property      string __DYNASTY {get;set;}                                                                        
+__GENUS                            Property      int __GENUS {get;set;}                                                                             
+__NAMESPACE                        Property      string __NAMESPACE {get;set;}                                                                      
+__PATH                             Property      string __PATH {get;set;}                                                                           
+__PROPERTY_COUNT                   Property      int __PROPERTY_COUNT {get;set;}                                                                    
+__RELPATH                          Property      string __RELPATH {get;set;}                                                                        
+__SERVER                           Property      string __SERVER {get;set;}                                                                         
+__SUPERCLASS                       Property      string __SUPERCLASS {get;set;}                                                                     
+ConvertFromDateTime                ScriptMethod  System.Object ConvertFromDateTime();                                                               
+ConvertToDateTime                  ScriptMethod  System.Object ConvertToDateTime();
+
+$wmiapp | Select @{l="SDMPackageXML";e={$_.sdmpackagexml.length}}
+
+SDMPackageXML
+-------------
+            0
+# I have yet to find a corresponding method against a Get-CimInstance result
+# but this would retrieve any lazy properties of the object.
+$wmiapp.Get()
+
+$wmiapp | Select @{l="SDMPackageXML";e={$_.sdmpackagexml.length}}
+
+SDMPackageXML
+-------------
+        53356
