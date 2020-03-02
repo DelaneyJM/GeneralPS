@@ -87,6 +87,12 @@ SourceModelName                    Property     string SourceModelName {get;}
 SourceSite                         Property     string SourceSite {get;set;}                                                                                             
 SummarizationTime                  Property     CimInstance#DateTime SummarizationTime {get;}
 
+$cimapp | Select @{l="SDMPackageXML";e={$_.sdmpackagexml.length}}
+
+SDMPackageXML
+-------------
+            0
+
 # WMI version
 $wmiapp = Get-WmiObject -ComputerName mysccmprimary -Namespace root\sms\site_cm1 -Class sms_applicationlatest -filter = 'Office 2016 R2D3 B'"
 $wmiapp | Get-Member
@@ -183,6 +189,7 @@ $wmiapp | Select @{l="SDMPackageXML";e={$_.sdmpackagexml.length}}
 SDMPackageXML
 -------------
             0
+            
 # I have yet to find a corresponding method against a Get-CimInstance result
 # but this would retrieve any lazy properties of the object.
 $wmiapp.Get()
